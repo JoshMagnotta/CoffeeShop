@@ -4,12 +4,10 @@ public class Business {
 
     static String companyName = "Josh's Java Coffee Shop";
     static String myName = "Josh";
-    static String[] menu = { "Latte", "Cappuccino", "Americano", "Macchiato", "Flat White", "Irish", "Black",
-            "Cold Brew", "Espresso", "Affogato" };
-    static int noMenuItems = menu.length;
 
     public static void main(String[] args) throws InterruptedException {
 
+        
         Scanner scnr = new Scanner(System.in);
         String decorativeLine = "******************************";
 
@@ -20,8 +18,6 @@ public class Business {
         System.out.println("Hey there, " + customerName + "!");
         Thread.sleep(100);
         System.out.println("Here's our menu, " + customerName + ". Have a look:");
-
-        // Part E
 
         Coffee[] menuItemsList = new Coffee[10];
         menuItemsList[0] = new Coffee(1, "Latte", 5.49);
@@ -35,6 +31,7 @@ public class Business {
         menuItemsList[8] = new Coffee(9, "Espresso", 1.25);
         menuItemsList[9] = new Coffee(10, "Affogato", 3.49);
 
+        // prints menu
         for (int i = 0; i < menuItemsList.length; i++) {
             System.out.println(menuItemsList[i].toString());
         }
@@ -48,9 +45,11 @@ public class Business {
 
         System.out.println("Please ensure you correctly spell the name of the coffee.");
 
+        // runs itemTotal times
         for (int i = 0; i < itemTotal;) {
             System.out.println("What would you like to order? ");
 
+            // checks to make sure input is a valid menu item, then stores it
             String order = scnr.nextLine();
             for (int j = 0; j < menuItemsList.length; j++) {
                 thisItemID = menuItemsList[j].getName();
@@ -64,6 +63,8 @@ public class Business {
 
         }
 
+        // checkout 
+        
         System.out.println("Thank you for placing your order!");
         System.out.print("You ordered a: ");
         for (int i = 0; i < itemTotal - 1; i++) {
