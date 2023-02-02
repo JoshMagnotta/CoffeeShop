@@ -7,7 +7,7 @@ public class Coffee {
 
     }
 
-    Coffee(int ID, String Name, double Price) {
+    public Coffee(int ID, String Name, double Price) {
         this.itemID = ID;
         this.itemName = Name;
         this.itemPrice = Price;
